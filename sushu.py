@@ -19,5 +19,5 @@ def sushu(num):
             flag = False
 L1 = [i for i in sushu(1000)]
 print(L1)
-print(1234)
+print(123)
 
