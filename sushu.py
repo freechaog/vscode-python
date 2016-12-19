@@ -4,20 +4,24 @@
 
 def sushu(num):
     """得到素数"""
-    flag = False
+
     for i in range(1, num):
-        for j in range(2, i+1):
-            if j < i:
-                if i%j == 0:
-                    break
-            elif j == i:
-                flag = True
-            else:
+        for j in range(2, int(i**0.5)+1):
+            if i % j == 0:
                 break
-        if flag is True:
+        else:
             yield i
-            flag = False
-L1 = [i for i in sushu(1000)]
+
+
+def sushus(num):
+    "新解法"
+    for i in range(2, int(num*0.5)+1):
+        if num%i == 0:
+            break
+    else:
+        return num
+
+L1 = [i for i in sushu(20)]
 print(L1)
-print(12356)
+print(sushu1(3))
 

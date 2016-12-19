@@ -11,5 +11,5 @@ def juzhenzhuanzhi(juz):
                 jzzz[j].append(juz[i][j])
     return jzzz
 
-ZZ1 = juzhenzhuanzhi([(1, 2, 3), (4, 5, 6)])
+ZZ1 = juzhenzhuanzhi([(1, 2), (4, 5, 6)])
 print(ZZ1)
