@@ -10,4 +10,4 @@ def yanghui(i, j):
     else:
         return yanghui(i-1, j) + yanghui(i-1, j-1)
 
-print(yanghui(6, 100))
+print(yanghui(4,1))
