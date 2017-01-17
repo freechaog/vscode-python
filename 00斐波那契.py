@@ -11,3 +11,11 @@ for i in range(0,6):
         y = x+temp
         x = temp
 print(y)
+
+'''用生成器来解决递归问题'''
+def fib():
+    a = 0
+    b = 1
+    while True:
+        a, b = b,a+b
+        yield a
