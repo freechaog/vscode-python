@@ -3,12 +3,12 @@ import functools
 def dispatcher():
     commands = {}
 
-    def register(command, fn):
-        @functools.wraps(fn)
-        def wrap(*args, **kwargs):
+    def register(command):
+        
+        def _register(fn):
             commands[command] = fn
             return fn
-        return wrap
+        return _register
 
 
     def run():
@@ -17,11 +17,13 @@ def dispatcher():
             command=input('>>>')
             if command.strip()=='quit':
                 break
-            commands[command]()
+            commands.get(command)()
     return register, run
 
+register, run = dispatcher()
+
+@register('add')
 def add():
     print(123)
 
-register, run = dispatcher
-
+run()
